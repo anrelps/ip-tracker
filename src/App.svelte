@@ -10,7 +10,10 @@
     let timezone: string;
     let latitude: number;
     let longitude: number;
-    const apiKey = 'at_A4RiyH1Dtc79uOuiueSU6sCok2ioZ';
+    const apiKey = import.meta.env.VITE_IPIFY_API_KEY;
+    if (!apiKey) {
+        console.error('API key not found! Please check your .env file');
+    }
     let searchInput: string = '';
     let marker: any;
     let error: string = '';
